@@ -26,6 +26,8 @@ class Journal:
     # suppose if there's other types of class like article, book, webpage etc
     # all these types need its own save and load methods
     # so what we need is a centrally changable code with single purpose
+    
+    # we can comment the below
     def save(self, filename):
         file = open(filename,"w")
         file.write(str(self))
@@ -41,4 +43,19 @@ class Journal:
 j = Journal()
 j.add_entry("I beleive")
 j.add_entry("I ate a bug")
-print(f"jounar entries: {j}")
+print(f"journal entries: {j}")
+
+
+class PersistenceManager:
+    @staticmethod
+    def save_to_file(journal, filename):
+        file = open(filename,'w')
+        file.write(str(journal))
+        file.close()
+    
+file = r'journal.txt'
+PersistenceManager.save_to_file(j, file)
+
+with open(file) as fh:
+    print(fh.read())
+        

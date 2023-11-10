@@ -1,0 +1,17 @@
+{% extends 'food/base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+<body>
+    {%block body%}
+    <h1>Welcome to Navfoods</h1>
+    <a href="{% url 'food:item_view' %}">
+        <b>Check out our Food Menu</b>
+    </a> 
+    {%endblock%}
+</body>
+</html>

@@ -1,0 +1,21 @@
+1. Create project, app and runserver
+    django-admin startproject social_project
+    django-admin startapp users
+
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver
+
+2) Create app url and map to project url
+
+    user app --> user_urls.py
+    project --> urls.py
+
+    from django.urls import path, include
+
+3) Create Login Form:
+    create forms.py
+    from django import forms
+    and from forms inherit forms.Form
+
+

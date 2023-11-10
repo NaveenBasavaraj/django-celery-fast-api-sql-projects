@@ -1,0 +1,53 @@
+cd desktop/the_lab
+
+git --version
+
+git config --global user.name "Naveen Basavaraj"
+git config -- global user.email "naveen.b.workmail@gmail.com"
+
+git config --list
+
+** get help:
+=========================
+git help config
+get config --help
+
+** initialize a repository from existing code:
+==============================================
+ls -la
+git init
+git status
+touch .gitignore
+git status (now the files specified in gitignore does not show up)
+
+** Git has three states:
+==============================================
+1) working directory (stage fixes to staging area)
+2) staging area (stage fixes, and then commit to repo)
+3) .git directory (repository) (the place where we check out code from)
+
+** Add files to staging area:
+================================================
+git add .gitignore
+git add -A (adds everything to staging area)
+git status 
+git reset .gitignore
+git reset
+git commit -m "Initial Commit"
+git log
+
+**Git cloning:
+==========================
+git clone <url>
+
+git remote -v
+git branch -a 
+
+** Then PUSH:
+=============================
+
+git remote add origin https://github.com/NaveenBasavaraj/the_lab
+git pull origin master
+git push origin master
+
+P, K, E, S, V
