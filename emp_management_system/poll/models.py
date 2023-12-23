@@ -16,6 +16,10 @@ class Question(models.Model):
     def __str__(self):
         return self.question
 
+    @property
+    def choices(self):
+        return self.choice_set.all()
+
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
@@ -25,3 +29,16 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice
+
+    def votes(self):
+        return self.answer_set.count()
+
+
+class Answer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+    created_ts = models.DateTimeField(auto_now_add=True)
+    modified_ts = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user.first_name + "-" + self.choice.text

@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
-<body>
-    {% block content %}
-    <h1>{{title}}</h1>
-    {% endblock %}
-</body>
+
+{% block content %}
+    <h3>Below are the list of {{ title }}:</h3>
+    {% if questions %}
+        <ul>
+            {% for q in questions %}
+                <li><a href="{% url 'poll:poll_page' q.id %}">{{ q.question }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No questions available.</p>
+    {% endif %}
+{% endblock %}
