@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
 {% block body  %}
-<h2>This is Poll page</h2>
+<h2>This is the {{title}} page</h2>
+<br>
+
+<h4>Below are the questions available for polling:</h4>
+{% if questions %}
+    {% for question in questions %}
+    <ul>
+        <li><a href="{% url 'Poll:poll-detail'  question.id %}">{{question.question}}</a></li>
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>No questions are available.</p>
+{% endif %}
 {% endblock %}

@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
 {% block body  %}
 <h2>This is poll detail page</h2>
+<br>
+
+{% if question %}
+    <h3>{{question.question}}</h3>
+        {% for choice in question.choice_set.all %}
+        <ul>
+            <li>{{choice.choice}}</li>
+        </ul>
+        {% endfor %}
+{% else %}
+    <p>No questions are available.</p>
+{% endif %}
 {% endblock %}
