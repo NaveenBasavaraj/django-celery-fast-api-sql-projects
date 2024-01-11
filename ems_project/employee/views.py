@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.contrib.auth.models import User
 from employee.forms import UserForm
 from django.http import HttpResponseRedirect
@@ -47,4 +47,12 @@ def employee_edit(request, id:int):
     return render(request, 'employee/edit.html', context)
 
 def employee_delete(request, id:int):
-    pass
+    user = get_object_or_404(User, id=id)
+    if request.method == 'POST':
+        user.delete()
+        url = reverse('employee_list')
+        return HttpResponseRedirect(url)
+    else:
+        context = {}
+        context['user'] = user 
+        return render(request, 'employee/delete.html',context)
