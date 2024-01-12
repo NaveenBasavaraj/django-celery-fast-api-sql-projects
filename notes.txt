@@ -1,0 +1,4 @@
+For the current django project (analyze my files):
+1. Add navbar 
+2. Conditionally should show login, logout in the navbar
+3. Once logged include employee_list, employee_add, employee_edit  url on the navbar
