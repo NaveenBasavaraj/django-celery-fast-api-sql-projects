@@ -6,7 +6,7 @@
         {% if questions %}
         <ol>
             {% for question in questions %}
-            <li><a href="{% url 'Poll:details' question.id %}">{{question.title}}</a></li>
+            <li><a href="{% url 'Poll:poll' question.id %}">{{question.title}}</a></li>
             {% endfor %}
         </ol>  
         {% else %}

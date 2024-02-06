@@ -6,5 +6,4 @@ urlpatterns = [
     path('', index, name='polls'),
     path('<int:id>', poll, name='poll'),
     path('<int:id>/details', details, name='details'),
-    
 ]

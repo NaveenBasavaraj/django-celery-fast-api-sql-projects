@@ -3,18 +3,11 @@
 {% block content%}
 <h2>This is the {{title}} app</h2>
     <div>
-        {% if question %}
-            <h3>{{question.title}}</h3>
-            <ol>
-                {% for choice in question.choices  %}
-                <li>
-                    {{choice.text}} ({{choice.votes}})
-                </li>
-                {% endfor %}
-            </ol>  
-        {% else %}
-            <h3>Question does not exist or active</h3>
-        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <p>are you sure you want to delete {{user.username}}??</p>
+            <input type="submit" value="yes">
+        </form>
     </div>
     
 {% endblock content%}
