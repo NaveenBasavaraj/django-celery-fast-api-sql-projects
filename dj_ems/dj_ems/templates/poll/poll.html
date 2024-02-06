@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Vote page</h2>
+<h3>{{question.title}}</h3>
+<form action="POST" action='/polls/{{question.id}}'>
+    {% for choice in question.choices %}
+    <label>{{choice.text}}</label>
+    <input type="radio" name="answer" value="{{choice.id}}">
+    {% endfor %}
+</form>
+    <p>Poll is created by {{question.created_by.first_name}}</p>
+{% endblock content %}

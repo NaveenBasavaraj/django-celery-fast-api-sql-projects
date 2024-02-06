@@ -20,3 +20,15 @@ def details(request, id):
         "title":"details"
     }
     return render(request, 'poll/detail.html', context)
+
+def poll(request, id=None):
+    if request.method == 'GET':
+        try:
+            question = Question.objects.get(id=id)
+        except:
+            raise Http404
+        context = {
+            "question":question,
+            "title":"poll"
+        }
+        return render(request, 'poll/poll.html', context)

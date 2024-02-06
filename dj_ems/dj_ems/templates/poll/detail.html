@@ -8,7 +8,7 @@
             <ol>
                 {% for choice in question.choices  %}
                 <li>
-                    {{choice.text}}
+                    {{choice.text}} ({{choice.votes}})
                 </li>
                 {% endfor %}
             </ol>  
