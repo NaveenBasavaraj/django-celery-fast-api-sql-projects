@@ -1,4 +1,4 @@
-# django_projects
+# full stack projects with sql db, handling asynchronous tasks using celery and rabbitmq with redis for cache management
 
 django_projects
 
