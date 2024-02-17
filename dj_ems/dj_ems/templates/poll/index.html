@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h2>This is the {{title}} app</h2>
+    <div>
+        {% if questions %}
+        <ol>
+            {% for question in questions %}
+            <li><a href="{% url 'Poll:poll' question.id %}">{{question.title}}</a></li>
+            {% endfor %}
+        </ol>  
+        {% else %}
+            <h3>There are no questions</h3>
+        {% endif %}
+    </div>
+    
+{% endblock content%}
