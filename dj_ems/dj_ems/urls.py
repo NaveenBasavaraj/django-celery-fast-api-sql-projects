@@ -23,6 +23,6 @@ urlpatterns = [
     path('poll/', include('poll.urls')),
     path('emp/', include('employee.urls')),
     path('login/', user_login, name="user_login"),
-    path('poll/', success, name="user_success"),
-    path('emp/', user_logout, name="user_logout"),
+    path('success/', success, name="user_success"),
+    path('logout/', user_logout, name="user_logout"),
 ]

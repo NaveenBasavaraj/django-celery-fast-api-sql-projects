@@ -14,10 +14,10 @@ class Profile(models.Model):
     def __str__(self):
         return "{0} {1}".format(self.user.first_name, self.user.last_name)
 
-@receiver(post_save, sender=User)
-def user_is_created(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-    else:
-        instance.profile.save()
+# @receiver(post_save, sender=User)
+# def user_is_created(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
+#     else:
+#         instance.profile.save()
          
