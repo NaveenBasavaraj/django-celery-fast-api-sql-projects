@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title mb-0">Below are the Employees</h5>
+        </div>
+        {% if profiles %}
+            <ul class="list-group list-group-flush">
+                {% for profile in profiles %}
+                <li class="list-group-item">
+                    <a href="{% url 'employee_app:employee-details' profile.id %}">{{profile.user.username}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+        <div class="card-body">
+            <p>There are no userers created yet</p>
+        </div>
+        {% endif  %}
+    </div>
+</div>
+
+{% endblock content %}

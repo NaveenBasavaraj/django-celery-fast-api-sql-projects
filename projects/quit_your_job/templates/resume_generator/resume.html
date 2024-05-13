@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{profile.name}}</h2>
+<h2>{{profile.email}}</h2>
+<h2>{{profile.phone}}</h2>
+<br>
+<p>Summary</p>
+<p>{{profile.summary}}</p>
+<p>Skills</p>
+<p>{{profile.skills}}</p>
+<p>Education</p>
+<ul>
+    <li>{{profile.school}}</li>
+    <li>{{profile.university}}</li>
+    <li>{{profile.school}}</li>
+</ul>
+{% endblock content %}
