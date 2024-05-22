@@ -1,11 +1,12 @@
 # Full Stack Django Projects:
 
 ### Setup:
-virtualenv django_common_env
-django_common_env\scripts\activate
-pip install django
-pip install pygments
-celery -A django_celery_redis worker -l info --pool=solo
+1. virtualenv django_common_env
+2. django_common_env\scripts\activate
+3. pip install django
+4. pip install pygments
+5. pip install djangorestframework
+6. ignore this --> celery -A django_celery_redis worker -l info --pool=solo
 
 ### Project 1: Film Companion Rest API
 1. Lets user register/signup
